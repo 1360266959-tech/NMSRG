@@ -155,11 +155,15 @@ run('stage2_matlab/office_home.m');
 
 The script performs source-validation parameter selection and runs the Stage-2 NMSRG procedure through `DA_LPP_MV_GLR_quick.m`.
 
-### 4. Reproduce Table 8 and Table 9
 
 ```matlab
-run('stage2_matlab/Run_GraphReplacement_Table8.m');
-run('stage2_matlab/Run_Ablation_Table9.m');
+### 4. Reproduce Table 8 and Table 9
+
+Load the three view-specific Stage-1 feature matrices and the corresponding labels following the data-loading procedure in `stage2_matlab/office_home.m`. Then call:
+matlab Run_GraphReplacement_Table8( ... pre_feat_S, pre_lb_S, pre_feat_T, pre_lb_T, ... so_feat_S, so_lb_S, so_feat_T, so_lb_T, ... pseudo_feat_S, pseudo_lb_S, pseudo_feat_T, pseudo_lb_T);
+
+Run_Ablation_Table9( ... pre_feat_S, pre_lb_S, pre_feat_T, pre_lb_T, ... so_feat_S, so_lb_S, so_feat_T, so_lb_T, ... pseudo_feat_S, pseudo_lb_S, pseudo_feat_T, pseudo_lb_T);
+The scripts use seeds 2024, 2025, and 2026 and report the mean and standard deviation.
 ```
 
 ## Numerical Reproducibility
