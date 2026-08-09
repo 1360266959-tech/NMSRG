@@ -108,7 +108,8 @@ def get_dataset(dataset_name, root, source, target, train_source_transform, val_
             transform=train_source_transform
         )
 
-        # ImageCLEF 目标域有 GT，提特征直接用
+       # Target labels are loaded only for final evaluation.
+    # They are excluded from Stage-1 training and Stage-2 inference.
         train_target_dataset = ImageFolder(
             root=os.path.join(root, tgt),
             transform=train_target_transform
