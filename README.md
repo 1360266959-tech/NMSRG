@@ -54,6 +54,7 @@ Install the Python dependencies with:
 
 ```bash
 pip install -r requirements.txt
+If the CUDA-enabled PyTorch packages cannot be resolved from the default package index, install the PyTorch CUDA 11.8 build following the official PyTorch installation instructions, and then install the remaining dependencies.
 ```
 
 Alternatively, create the Conda environment with:
