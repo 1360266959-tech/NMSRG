@@ -62,7 +62,7 @@ fprintf('\n========== Fair Graph Replacement: Table 8 ==========' + "\n");
 for s = 1:numel(seeds)
     rng(seeds(s),'twister');
 
-    % Stratified construction guarantees source samples precede target samples.
+    % Seeded uniform sampling is shared by all methods; source samples precede target samples.
     sourceIdx = randperm(size(FS{1},1), min(cfg.max_source,size(FS{1},1)));
     targetIdx = randperm(size(FT{1},1), min(cfg.max_target,size(FT{1},1)));
     subsetSize(:,s) = [numel(sourceIdx);numel(targetIdx)];
