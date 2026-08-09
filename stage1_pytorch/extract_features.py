@@ -75,7 +75,7 @@ def extract_features(loader, feature_extractor, device):
 def main():
     parser = argparse.ArgumentParser(
         description="Extract features to MAT like sample (features:(N,D,1,1) float32, labels:(1,N) int64).")
-    parser.add_argument('--root', required=True, help='E:\BaiduNetdiskDownload\MIC特征提取\MIC-master\cls\data\image_CLEF')
+    parser.add_argument('--root', required=True, help='Root directory of the benchmark dataset.')
     parser.add_argument('--data', default='image_CLEF', choices=utils.get_dataset_names())
     parser.add_argument('--source', nargs='+', required=True, help='c')
     parser.add_argument('--target', nargs='+', required=True, help='i')
@@ -88,8 +88,8 @@ def main():
     parser.add_argument('--norm-std', nargs='+', type=float, default=(0.229, 0.224, 0.225))
     parser.add_argument('--no-pool', action='store_true')
 
-    parser.add_argument('--model-path', required=True, help='E:\BaiduNetdiskDownload\imageclef\resnet\jb\ImageCLEF_c2i\checkpoints')
-    parser.add_argument('--outdir', required=True, help='E:\BaiduNetdiskDownload\imageclef\特征\jb')
+    parser.add_argument('--model-path', required=True, help='Path to the trained Stage-1 checkpoint')
+    parser.add_argument('--outdir', required=True, help='Directory for exported Stage-2 feature files')
 
     parser.add_argument('--batch-size', type=int, default=32)
     parser.add_argument('--workers', type=int, default=2)
