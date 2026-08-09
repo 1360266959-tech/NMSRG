@@ -1,4 +1,4 @@
-name: MIC
+name: nmsrg
 channels:
   - defaults
 dependencies:
@@ -128,4 +128,3 @@ dependencies:
       - yapf==0.43.0
       - yaspin==3.2.0
       - zipp==3.23.0
-prefix: C:\ProgramData\anaconda3\envs\MIC
